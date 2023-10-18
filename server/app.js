@@ -8,13 +8,19 @@ const cors = require("cors");
 const connectDB = require("./src/infrastructure/db/connect");
 
 //vercel upload
-app.use(cors(
-  {
-    origin:["https://vercel-test-client-pied.vercel.app/"],
-    methods:["POST","GET"],
-    credentials:true
-  }
-));
+const allowedOrigins = ['https://vercel-test-client-pied.vercel.app'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
 
 //routers
 const teacherRouter = require("./src/routers/teacherRouter");
