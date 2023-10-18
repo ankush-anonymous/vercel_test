@@ -7,6 +7,15 @@ const cors = require("cors");
 //connectDB
 const connectDB = require("./src/infrastructure/db/connect");
 
+//vercel upload
+app.use(cors(
+  {
+    origin:["https://vercel-test-client-pied.vercel.app/"],
+    methods:["POST"."GET"],
+    credentials:true
+  }
+));
+
 //routers
 const teacherRouter = require("./src/routers/teacherRouter");
 const adminRouter = require("./src/routers/adminRouter");
