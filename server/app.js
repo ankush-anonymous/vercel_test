@@ -11,7 +11,7 @@ const connectDB = require("./src/infrastructure/db/connect");
 app.use(cors(
   {
     origin:["https://vercel-test-client-pied.vercel.app/"],
-    methods:["POST"."GET"],
+    methods:["POST","GET"],
     credentials:true
   }
 ));
