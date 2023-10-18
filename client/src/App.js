@@ -14,7 +14,7 @@ import TeacherExpirencePage from "./Pages/RegisterTeacher/TeacherExpirencePage";
 import LoginTeacherPage from "./Pages/LoginTeacherPage";
 import DashboardPage from "./Pages/TeacherPortal/DashboardPage";
 import HomePage from "./Pages/TeacherPortal/HomePage";
-axios.defaults.baseURL = "http://localhost:5000"; // Change this URL to your backend API URL
+axios.defaults.baseURL = "https://tutorlok-test-api.vercel.app"; // Change this URL to your backend API URL
 function App() {
   return (
     <div className="App">
